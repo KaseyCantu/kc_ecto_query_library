@@ -16,8 +16,9 @@ defmodule FishingSpot.Mixfile do
       source_url: "https://github.com/KaseyCantu/fishing_spot",
       homepage_url: "http://YOUR_PROJECT_HOMEPAGE.com",
       docs: [
-        main: "Fishing Spot", # The main page in the docs
-        #logo: "path/to/logo.png",
+        # The main page in the docs
+        main: "Fishing Spot",
+        # logo: "path/to/logo.png",
         extras: ["README.md"]
       ]
     ]
@@ -48,7 +49,7 @@ defmodule FishingSpot.Mixfile do
       {:ecto, "~> 3.7"},
       {:ecto_sql, "~> 3.7"},
       {:ex_doc, "~> 0.28.0", only: :dev, runtime: false},
-      {:postgrex, "~> 0.16.1"},
+      {:postgrex, "~> 0.16.1"}
     ]
   end
 

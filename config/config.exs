@@ -25,4 +25,4 @@ use Mix.Config
 config :fishing_spot,
   ecto_repos: [FishingSpot.Repo]
 
-import_config "#{Mix.env}.exs"
+import_config "#{Mix.env()}.exs"
