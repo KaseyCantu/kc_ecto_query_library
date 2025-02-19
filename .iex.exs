@@ -1,3 +1,7 @@
+import_file_if_available("~/.iex.exs")
+
+import Ecto.Query
+
 alias FishingSpot.Repo
 alias FishingSpot.Location
 alias FishingSpot.LocationTrip
@@ -11,6 +15,4 @@ alias FishingSpot.Trip
 alias FishingSpot.Queries
 alias FishingSpot.Account
 
-import Ecto.Query
-
-q = fn -> c("lib/queries.exs") end
+q = fn -> c("lib/fishing_spot/queries.ex") end

@@ -1,0 +1,16 @@
+{
+  "Servers": {
+    "1": {
+      "Name": "KC Ecto Query Library Pre-Configured",
+      "Group": "Servers",
+      "Host": "db",
+      "Port": 5432,
+      "MaintenanceDB": "fishing_spot",
+      "Username": "postgres",
+      "Comment": "Auto-detected PostgreSQL DB Connection",
+      "SSLMode": "prefer",
+      "SavePassword": true,
+      "PassFile": "/.pgpass"
+    }
+  }
+}

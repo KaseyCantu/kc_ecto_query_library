@@ -1,0 +1,43 @@
+services:
+  db:
+    image: postgres:latest
+    container_name: fishing_spot_db
+    environment:
+      POSTGRES_DB: fishing_spot
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4:9.0.0
+    container_name: fishing_spot_pgadmin
+    entrypoint: >
+      /bin/sh -c "
+            chmod 600 /tmp/.pgpass;
+            mkdir -p /var/lib/pgadmin/storage/admin_admin.com;
+            cp /tmp/.pgpass /var/lib/pgadmin/storage/admin_admin.com/.;
+            /entrypoint.sh;
+            "
+    environment:
+      PGADMIN_CONFIG_MASTER_PASSWORD_REQUIRED: "False"
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_CONFIG_CONSOLE_LOG_LEVEL: 10
+    volumes:
+      - type: bind
+        source: ./pgadmin4/servers.json
+        target: /pgadmin4/servers.json
+      - type: bind
+        source: ./pgadmin4/.pgpass
+        target: /tmp/.pgpass
+        read_only: true
+    ports:
+      - "5050:80"
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:

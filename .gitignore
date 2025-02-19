@@ -109,3 +109,5 @@ erl_crash.dump
 /config/*.secret.exs
 .elixir_ls/
 
+## PGAdmin4
+./pgadmin4/.pgpass
