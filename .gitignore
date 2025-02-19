@@ -110,4 +110,4 @@ erl_crash.dump
 .elixir_ls/
 
 ## PGAdmin4
-./pgadmin4/.pgpass
+/pgadmin4/.pgpass
